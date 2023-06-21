@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:pizza_app_byme/models/pizza_topping.dart';
 
 import '../models/pizza_model.dart';
@@ -42,17 +41,14 @@ class _HomePageState extends State<HomePage>
     ),
   ];
   TextEditingController sized = TextEditingController();
-
-  PageController _pageControllerPizza = PageController();
-
-  void priceSized(int index) {
-    int price;
+  late PageController _pageController = PageController();
+  void _priceSized(int index) {
     if (index == 0) {
-      print("price = 8");
+      print("${myPizzas[index].pizzaPriceS}");
     } else if (index == 1) {
-      print("price = 11");
+      print("${myPizzas[index].pizzaPriceM}");
     } else if (index == 2) {
-      print("price = 13");
+      print("${myPizzas[index].pizzaPriceL}");
     }
   }
 
@@ -92,28 +88,27 @@ class _HomePageState extends State<HomePage>
                         .copyWith(overscroll: false),
                     child: PageView.builder(
                         physics: const NeverScrollableScrollPhysics(),
+                        scrollDirection: Axis.vertical,
                         controller: null,
                         itemCount: myPizzas.length,
                         itemBuilder: (context, index) {
                           return Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              AnimatedContainer(
-                                duration: Duration(milliseconds: 400),
-                                child: Text(
-                                  "${null}",
-                                  style: TextStyle(fontSize: 32),
+                              Text(
+                                "${myPizzas[index].pizzaTitle}",
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                               SizedBox(
-                                height: 10,
+                                height: 14,
                               ),
-                              AnimatedContainer(
-                                duration: Duration(milliseconds: 400),
-                                child: Text(
-                                  "qwertyuiop",
-                                  style: TextStyle(fontSize: 15),
-                                ),
+                              Text(
+                                "${myPizzas[index].pizzaDesc}",
+                                style: TextStyle(
+                                    fontSize: 17, fontWeight: FontWeight.w500),
                               ),
                             ],
                           );
@@ -150,7 +145,7 @@ class _HomePageState extends State<HomePage>
                       duration: Duration(microseconds: 200),
                       child: PageView(
                         scrollDirection: Axis.horizontal,
-                        controller: _pageControllerPizza,
+                        controller: null,
                         children: [
                           Container(
                             decoration: BoxDecoration(
@@ -207,7 +202,7 @@ class _HomePageState extends State<HomePage>
                 isSelected: isSeleted,
                 highlightColor: Color.fromARGB(255, 111, 234, 234),
                 onPressed: (int index) {
-                  priceSized(index);
+                  _priceSized(index);
                 },
               ),
             ),
