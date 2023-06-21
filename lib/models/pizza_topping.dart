@@ -9,7 +9,7 @@ class Ingredient {
 
 var ingredients = <Ingredient>[
   Ingredient(
-    'assets/toppings/onion.png',
+    'assets/topping/onion.png',
     <Offset>[
       Offset(0.8, 0.15),
       Offset(0.6, 0.45),
@@ -19,7 +19,7 @@ var ingredients = <Ingredient>[
     false,
   ),
   Ingredient(
-    'assets/toppings/olives.png',
+    'assets/topping/olives.png',
     <Offset>[
       Offset(0.6, 0.2),
       Offset(0.5, 0.4),
@@ -29,7 +29,7 @@ var ingredients = <Ingredient>[
     false,
   ),
   Ingredient(
-    'assets/toppings/cheese.png',
+    'assets/topping/cheese.png',
     <Offset>[
       Offset(0.4, 0.3),
       Offset(0.6, 0.65),
@@ -39,7 +39,7 @@ var ingredients = <Ingredient>[
     false,
   ),
   Ingredient(
-    'assets/toppings/mushrooms.png',
+    'assets/topping/mushrooms.png',
     <Offset>[
       Offset(0.8, 0.15),
       Offset(0.6, 0.45),
@@ -49,7 +49,7 @@ var ingredients = <Ingredient>[
     false,
   ),
   Ingredient(
-    'assets/toppings/tomatos.png',
+    'assets/topping/tomatos.png',
     <Offset>[
       Offset(0.6, 0.2),
       Offset(0.5, 0.4),
@@ -59,7 +59,7 @@ var ingredients = <Ingredient>[
     false,
   ),
   Ingredient(
-    'assets/toppings/oregano.png',
+    'assets/topping/oregano.png',
     <Offset>[
       Offset(0.8, 0.15),
       Offset(0.6, 0.45),
